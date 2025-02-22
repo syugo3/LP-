@@ -1,0 +1,99 @@
+.benefits {
+  background-color: #f5f5f5;
+  padding: 60px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2カラムのグリッド */
+  gap: 30px; /* カード間の余白 */
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.worryImage {
+  display: block;
+  margin: 0 auto 20px;
+  width: 150px;
+}
+
+.content {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.content ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.content li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-left: 25px;
+  position: relative;
+}
+
+/* チェックマークを疑似要素で作成 */
+.content li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #0066cc;
+  font-weight: bold;
+}
+
+.skillChart,
+.salaryRange {
+  max-width: 100%;
+  margin: 20px 0;
+}
+
+.communicationLevel,
+.userSuccess {
+  width: 100%;
+  height: auto;
+  margin: 20px 0;
+  display: block;
+}
+
+.button {
+  width: 100%;
+  background: #0066cc;
+  color: white;
+  border: 2px solid #0066cc;
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.button:hover {
+  background: white;
+  color: #0066cc;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr; /* モバイルでは1カラムに */
+  }
+} 

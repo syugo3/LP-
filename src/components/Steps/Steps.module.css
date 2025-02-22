@@ -1,0 +1,103 @@
+.steps {
+  background-color: #f5f5f5;
+  padding: 80px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  color: #0066cc;
+  margin-bottom: 20px;
+}
+
+.description {
+  text-align: center;
+  margin-bottom: 60px;
+  line-height: 1.8;
+}
+
+.stepList {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  position: relative;
+}
+
+.stepItem {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+/* ステップ間の矢印 */
+.stepItem:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 0 10px 15px;
+  border-color: transparent transparent transparent #0066cc;
+}
+
+.stepNumber {
+  background: #0066cc;
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-weight: bold;
+}
+
+.stepIcon {
+  width: 120px;
+  height: 120px;
+  background: white;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.stepIcon img {
+  width: 60px;
+  height: 60px;
+}
+
+.stepItem h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.stepItem p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .stepList {
+    flex-direction: column;
+  }
+
+  .stepItem:not(:last-child)::after {
+    transform: rotate(90deg);
+    right: auto;
+    top: auto;
+    bottom: -30px;
+    left: 50%;
+  }
+} 

@@ -75,20 +75,23 @@
 }
 
 .button {
-  width: 100%;
-  background: #0066cc;
-  color: white;
-  border: 2px solid #0066cc;
-  padding: 12px 20px;
-  border-radius: 4px;
+  display: inline-block;
+  padding: 15px 40px;
+  font-size: 1.1rem;
   font-weight: bold;
+  text-decoration: none;
+  color: white;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #f90404, #ffc107);  /* グラデーションを更新 */
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 15px rgba(249, 4, 4, 0.3);  /* シャドウカラーを更新 */
+  border: none;
   cursor: pointer;
-  transition: all 0.3s;
 }
 
 .button:hover {
-  background: white;
-  color: #0066cc;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(249, 4, 4, 0.4);  /* ホバー時のシャドウカラーを更新 */
 }
 
 /* レスポンシブデザイン */
@@ -131,7 +134,11 @@
 }
 
 .highlight {
-  color: #0066cc;
+  background: linear-gradient(45deg, #f90404, #ffc107);  /* 赤からオレンジのグラデーション */
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin: 0 2px;
 }
 
 .concernsText ul {

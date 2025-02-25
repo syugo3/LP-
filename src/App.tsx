@@ -59,7 +59,6 @@ const Header = () => (
         <Link to="/search" style={{ textDecoration: 'none', color: '#666' }}>求人・企業検索</Link>
         <Link to="/media" style={{ textDecoration: 'none', color: '#666' }}>メディア</Link>
         <Link to="/event" style={{ textDecoration: 'none', color: '#666' }}>イベント</Link>
-        <Link to="/freelance" style={{ textDecoration: 'none', color: '#666' }}>Findy Freelance</Link>
         <Link to="/recruiter" style={{ textDecoration: 'none', color: '#666' }}>採用担当者の方はこちら</Link>
         <Link to="/login" style={{ textDecoration: 'none', color: '#666' }}>ログイン</Link>
         <Link to="/register" style={{

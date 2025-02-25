@@ -17,11 +17,11 @@
 }
 
 .highlight {
-  display: inline-block;
-  background: #0066cc;
+  background: linear-gradient(45deg, #f90404, #ffc107);
   color: white;
-  padding: 2px 12px;
+  padding: 2px 8px;
   border-radius: 4px;
+  margin: 0 2px;
 }
 
 .subtitle {

@@ -96,4 +96,74 @@
   .container {
     grid-template-columns: 1fr; /* モバイルでは1カラムに */
   }
+}
+
+.concernsSection {
+  background-color: #f8f9ff;
+  padding: 60px 0;
+}
+
+.concernsContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.concernsContent {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.concernsImage {
+  width: 300px;
+  height: auto;
+}
+
+.concernsText {
+  flex: 1;
+}
+
+.concernsText h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.highlight {
+  color: #0066cc;
+}
+
+.concernsText ul {
+  list-style: none;
+  padding: 0;
+}
+
+.concernsText li {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  padding-left: 30px;
+  position: relative;
+}
+
+.concernsText li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #0066cc;
+}
+
+@media (max-width: 768px) {
+  .concernsContent {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .concernsImage {
+    width: 200px;
+  }
+
+  .concernsText li {
+    text-align: left;
+  }
 } 

@@ -4,6 +4,25 @@ import styles from './Benefits.module.css';
 export const Benefits: React.FC = () => {
   return (
     <section className={styles.benefits}>
+      <div className={styles.concernsSection}>
+        <div className={styles.concernsContainer}>
+          <div className={styles.concernsContent}>
+            <img 
+              src="/worried-engineer.png" 
+              alt="悩むエンジニア" 
+              className={styles.concernsImage} 
+            />
+            <div className={styles.concernsText}>
+              <h2>こんなことに<span className={styles.highlight}>悩んで</span>いませんか？</h2>
+              <ul>
+                <li>転職したいけど、自分の技術力を評価してくれる会社が分からない</li>
+                <li>自分の希望年収に見合う会社を見つけたい</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className={styles.container}>
         <div className={styles.content}>
           <h3>スキル偏差値とは？</h3>

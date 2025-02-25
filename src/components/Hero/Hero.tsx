@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Hero.module.css';
+import backgroundImage from '../../assets/images/modern-office.avif';
 
 interface HeroProps {
   onCtaClick?: () => void;
@@ -12,7 +13,7 @@ export const Hero: React.FC<HeroProps> = ({
   onCtaClick,
   title = "未来を創る\nエンジニアを募集中",
   subtitle = "私たちと一緒に、『価値創出』を生み出しませんか？",
-  buttonText = "募集職種を見る"
+  buttonText = "応募する"
 }) => {
   const handleClick = React.useCallback(() => {
     if (onCtaClick) {
@@ -21,8 +22,11 @@ export const Hero: React.FC<HeroProps> = ({
   }, [onCtaClick]);
 
   return (
-    <section className={styles.hero}>
-      <div className={styles.container}>
+    <div 
+      className={styles.heroSection} 
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+    >
+      <div className={styles.heroContent}>
         <h1 className={styles.title}>
           {title.split('\n').map((line, i) => (
             <React.Fragment key={i}>
@@ -42,6 +46,6 @@ export const Hero: React.FC<HeroProps> = ({
           {buttonText}
         </button>
       </div>
-    </section>
+    </div>
   );
 }; 

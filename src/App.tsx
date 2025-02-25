@@ -4,6 +4,11 @@ import { Hero } from './components/Hero/Hero';
 import { Benefits } from './components/Benefits/Benefits';
 import { Steps } from './components/Steps/Steps';
 import { Companies } from './components/Companies/Companies';
+import { JobExamples } from './components/JobExamples/JobExamples';
+import { ApplicationForm } from './components/ApplicationForm/ApplicationForm';
+import nfLogo from './assets/images/nf-logo.png';  // imagesフォルダ内にある場合
+// または
+// import nfLogo from './assets/nf-logo.png';  // assetsフォルダ直下にある場合
 
 // 仮のコンポーネント
 const Header = () => (
@@ -23,24 +28,50 @@ const Header = () => (
       justifyContent: 'space-between',
       alignItems: 'center'
     }}>
-      <Link to="/" style={{ 
-        textDecoration: 'none', 
-        color: '#333',
-        fontSize: '24px',
-        fontWeight: 'bold'
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: '0.5rem'
       }}>
-        Findy
-      </Link>
-      <div>
+        <img 
+          src={nfLogo}
+          alt="NF Logo" 
+          style={{
+            height: '40px',
+            width: 'auto',
+            marginRight: '10px'
+          }}
+        />
         <Link to="/" style={{ 
-          marginRight: '20px',
+          textDecoration: 'none', 
+          color: '#333',
+          fontSize: '24px',
+          fontWeight: 'bold'
+        }}>
+          ReAlice
+        </Link>
+      </div>
+      <div style={{
+        display: 'flex',
+        gap: '2rem',
+        alignItems: 'center'
+      }}>
+        <Link to="/search" style={{ textDecoration: 'none', color: '#666' }}>求人・企業検索</Link>
+        <Link to="/media" style={{ textDecoration: 'none', color: '#666' }}>メディア</Link>
+        <Link to="/event" style={{ textDecoration: 'none', color: '#666' }}>イベント</Link>
+        <Link to="/freelance" style={{ textDecoration: 'none', color: '#666' }}>Findy Freelance</Link>
+        <Link to="/recruiter" style={{ textDecoration: 'none', color: '#666' }}>採用担当者の方はこちら</Link>
+        <Link to="/login" style={{ textDecoration: 'none', color: '#666' }}>ログイン</Link>
+        <Link to="/register" style={{
           textDecoration: 'none',
-          color: '#666'
-        }}>求人・企業検索</Link>
-        <Link to="/positions" style={{
-          textDecoration: 'none',
-          color: '#666'
-        }}>募集職種</Link>
+          color: '#fff',
+          background: 'linear-gradient(45deg,rgb(247, 9, 9), #ffc107)',
+          padding: '0.5rem 1rem',
+          borderRadius: '4px',
+          fontWeight: 'bold',
+          boxShadow: '0 4px 15px rgba(255, 107, 107, 0.3)',
+          transition: 'transform 0.3s, box-shadow 0.3s'
+        }}>新規登録</Link>
       </div>
     </nav>
   </header>
@@ -52,38 +83,8 @@ const Home = () => (
     <Benefits />
     <Steps />
     <Companies />
-  </div>
-);
-
-const Positions = () => (
-  <div style={{ 
-    marginTop: '80px',
-    padding: '40px 20px',
-    maxWidth: '1200px',
-    margin: '80px auto 0'
-  }}>
-    <h1 style={{
-      fontSize: '32px',
-      marginBottom: '40px',
-      textAlign: 'center'
-    }}>募集職種一覧</h1>
-    <div style={{
-      display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-      gap: '20px'
-    }}>
-      {['フロントエンドエンジニア', 'バックエンドエンジニア', 'インフラエンジニア'].map((position) => (
-        <div key={position} style={{
-          padding: '20px',
-          backgroundColor: '#fff',
-          borderRadius: '8px',
-          boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
-        }}>
-          <h2 style={{ marginBottom: '10px' }}>{position}</h2>
-          <p style={{ color: '#666' }}>最新のWeb技術を活用した開発をお任せします</p>
-        </div>
-      ))}
-    </div>
+    <JobExamples />
+    <ApplicationForm />
   </div>
 );
 
@@ -94,7 +95,6 @@ const App: React.FC = () => {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/positions" element={<Positions />} />
         </Routes>
       </div>
     </BrowserRouter>

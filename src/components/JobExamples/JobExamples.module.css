@@ -99,13 +99,24 @@
   color: #0066cc;
 }
 
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
 .increase {
-  background: #0066cc;
+  background: linear-gradient(45deg, #f90404, #ffc107);
   color: white;
   padding: 4px 12px;
   border-radius: 20px;
   font-size: 0.9rem;
   margin-top: 5px;
+  animation: bounce 2s infinite ease-in-out;
+  display: inline-block;
 }
 
 @media (max-width: 768px) {

@@ -4,11 +4,11 @@
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1000px;  /* コンテナ全体を小さく */
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 2カラムのグリッド */
-  gap: 30px; /* カード間の余白 */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;  /* カード間の余白を調整 */
 }
 
 .title {
@@ -25,10 +25,16 @@
 }
 
 .content {
-  background: white;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: white;  /* 背景色を白に */
+  border-radius: 16px;  /* 角を丸く */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);  /* シャドウを追加 */
+  padding: 30px;  /* 内側の余白を追加 */
+  min-height: 520px;  /* カードの最小の高さを設定 */
+  justify-content: space-between;  /* コンテンツを均等に配置 */
 }
 
 .content h3 {
@@ -38,8 +44,7 @@
 }
 
 .content ul {
-  list-style: none;
-  padding: 0;
+  width: 100%;
   margin: 20px 0;
 }
 
@@ -49,6 +54,10 @@
   margin-bottom: 15px;
   padding-left: 25px;
   position: relative;
+  white-space: nowrap;  /* テキストを1行に */
+  overflow: hidden;
+  text-overflow: ellipsis;  /* 長いテキストは省略 */
+  width: 100%;
 }
 
 /* チェックマークを疑似要素で作成 */
@@ -102,29 +111,36 @@
 }
 
 .concernsSection {
-  background-color: #f8f9ff;
-  padding: 60px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;  /* 水平方向の中央揃え */
+  align-items: center;      /* 垂直方向の中央揃え */
+  padding: 40px 0;
 }
 
 .concernsContainer {
   max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0 auto;          /* 左右のマージンを自動で調整 */
   padding: 0 20px;
 }
 
 .concernsContent {
   display: flex;
+  justify-content: center;  /* 内容も中央揃え */
   align-items: center;
-  gap: 40px;
+  gap: 40px;               /* 画像とテキストの間隔 */
 }
 
 .concernsImage {
-  width: 300px;
+  max-width: 200px;  /* 300pxから200pxに縮小 */
   height: auto;
+  width: 100%;      /* レスポンシブ対応を維持 */
 }
 
 .concernsText {
-  flex: 1;
+  flex: 1;                 /* テキスト部分の幅を調整 */
+  max-width: 600px;        /* テキストの最大幅を設定 */
 }
 
 .concernsText h2 {
@@ -134,11 +150,25 @@
 }
 
 .highlight {
-  background: linear-gradient(45deg, #f90404, #ffc107);  /* 赤からオレンジのグラデーション */
+  background: linear-gradient(45deg, #f90404, #ffc107);  /* 既存のグラデーション */
   color: white;
   padding: 2px 8px;
   border-radius: 4px;
   margin: 0 2px;
+  display: inline-block;  /* 追加 */
+  animation: wave 2s ease-in-out infinite;  /* 追加 */
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-5px);
+  }
+  75% {
+    transform: translateY(5px);
+  }
 }
 
 .concernsText ul {
@@ -173,4 +203,13 @@
   .concernsText li {
     text-align: left;
   }
-} 
+}
+.skillImage {
+  width: 100%;
+  max-width: 280px;  /* 画像サイズを大きく */
+  height: auto;
+  margin: 20px auto;
+  display: block;
+  mix-blend-mode: multiply;  /* 白背景を透過 */
+  border-radius: 8px;
+}

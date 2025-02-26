@@ -6,7 +6,8 @@ export const Companies: React.FC = () => {
     <section className={styles.companies}>
       <div className={styles.container}>
         <h2 className={styles.title}>
-          あなたの <span className={styles.highlight}>偏差値</span> や <span className={styles.highlight}>発信力</span> に基づいて、厳選企業からオファーが届きます。
+          あなたの <span className={styles.highlight}>偏差値</span> や <span className={styles.highlight}>発信力</span> に基づいて<br />
+          厳選企業からオファーが届きます。
         </h2>
         <p className={styles.subtitle}>
           自社サービス開発企業を中心に、大手企業からスタートアップまで幅広く求人を掲載中
@@ -39,7 +40,8 @@ export const Companies: React.FC = () => {
         <div className={styles.cta}>
           <button className={styles.button}>新規登録して求人一覧を見る</button>
           <p className={styles.terms}>
-            利用規約、プライバシーポリシーに同意の上<br />
+            <span className={styles.link}>利用規約</span>、
+            <span className={styles.link}>プライバシーポリシー</span>に同意の上<br />
             サービスをご利用ください。
           </p>
         </div>

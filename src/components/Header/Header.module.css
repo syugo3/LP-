@@ -1,43 +1,117 @@
 .header {
+  padding: 15px 40px;
   background: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
   position: fixed;
+  width: 100%;
   top: 0;
-  left: 0;
-  right: 0;
   z-index: 1000;
 }
 
-.container {
+.nav {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
-  text-decoration: none;
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.nav {
+.logo {
+  height: 40px;
+  width: auto;
+  margin-right: 10px;
+}
+
+.brandName {
+  text-decoration: none;
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navLinks {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 30px;
 }
 
 .navLink {
-  color: #666;
+  color: #333;
   text-decoration: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-  transition: background-color 0.3s;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .navLink:hover {
-  background-color: #f5f5f5;
-  color: #333;
+  color: #0066CC;
+}
+
+.loginButton,
+.registerButton {
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  background: linear-gradient(to right, #0066CC, #00CC99);
+  transition: all 0.3s ease;
+}
+
+.loginButton:hover,
+.registerButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 102, 204, 0.4);
+}
+
+/* モバイルメニューのスタイル */
+.menuButton {
+  display: none;  /* デフォルトでは非表示 */
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 20px;
+  }
+
+  .menuButton {
+    display: block;  /* モバイルでは表示 */
+  }
+
+  .navLinks {
+    display: none;  /* デフォルトでは非表示 */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .navLinks.active {
+    display: flex;  /* メニュー展開時に表示 */
+  }
+
+  .navLink {
+    padding: 15px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .loginButton,
+  .registerButton {
+    width: 100%;
+    margin: 5px 0;
+    text-align: center;
+  }
 } 

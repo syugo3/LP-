@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import styles from './Steps.module.css';
 import step1 from '../../assets/images/step1.png';
 import step2 from '../../assets/images/step2.png';
@@ -6,27 +6,24 @@ import step3 from '../../assets/images/step3.png';
 import step4 from '../../assets/images/step4.png';
 
 export const Steps: React.FC = () => {
-  const stepsRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
+        entries.forEach((entry, index) => {
           if (entry.isIntersecting) {
-            entry.target.querySelectorAll(`.${styles.stepItem}`).forEach((item) => {
-              item.classList.add(styles.visible);
-            });
+            setTimeout(() => {
+              entry.target.classList.add(styles.visible);
+            }, index * 200);
           }
         });
       },
       {
-        threshold: 0.1
+        threshold: 0.2
       }
     );
 
-    if (stepsRef.current) {
-      observer.observe(stepsRef.current);
-    }
+    const steps = document.querySelectorAll(`.${styles.stepItem}`);
+    steps.forEach((step) => observer.observe(step));
 
     return () => observer.disconnect();
   }, []);
@@ -41,7 +38,7 @@ export const Steps: React.FC = () => {
           まずはお気軽にご登録ください。
         </p>
 
-        <div className={styles.stepList} ref={stepsRef}>
+        <div className={styles.stepList}>
           <div className={styles.stepItem}>
             <div className={styles.stepNumber}>STEP 1</div>
             <div className={styles.stepIcon}>

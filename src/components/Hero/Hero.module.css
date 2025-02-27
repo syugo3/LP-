@@ -61,7 +61,7 @@
   text-decoration: none;
   color: white;
   border-radius: 8px;
-  background: linear-gradient(45deg, #f90404, #ffc107);
+  background: linear-gradient(45deg,  #0066CC, #00CC99);
   transition: transform 0.3s, box-shadow 0.3s;
   box-shadow: 0 4px 15px rgba(249, 4, 4, 0.3);
   border: none;
@@ -77,20 +77,18 @@
 
 .button {
   display: inline-block;
-  padding: 15px 40px;
-  font-size: 1.1rem;
+  padding: 12px 24px;
+  border-radius: 8px;
   font-weight: bold;
   text-decoration: none;
   color: white;
-  border-radius: 8px;
-  background: linear-gradient(45deg, #ff0000, #ffc107);
-  transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  background: linear-gradient(to right, #0066CC, #00CC99);
+  transition: all 0.3s ease;
 }
 
 .button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+  box-shadow: 0 6px 20px rgba(0, 102, 204, 0.4);
 }
 
 @keyframes fadeIn {
@@ -102,4 +100,15 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.applyButton {
+  /* ... 他のスタイル ... */
+  background: linear-gradient(to right, #0066CC, #00CC99);
+  /* ... 他のスタイル ... */
+}
+
+.applyButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 102, 204, 0.4);
 } 

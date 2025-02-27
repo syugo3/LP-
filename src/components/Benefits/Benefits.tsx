@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './Benefits.module.css';
 import worriedEngineer from '../../assets/images/worried-engineer.png';
 import skillScore from '../../assets/images/skill-score.png';
@@ -7,6 +7,28 @@ import influenceLevel from '../../assets/images/influence-level.png';
 import userSuccess from '../../assets/images/user-success.png';
 
 export const Benefits: React.FC = () => {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add(styles.visible);
+            }, index * 200);
+          }
+        });
+      },
+      {
+        threshold: 0.1
+      }
+    );
+
+    const cards = document.querySelectorAll(`.${styles.content}`);
+    cards.forEach((card) => observer.observe(card));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className={styles.benefits}>
       <div className={styles.concernsSection}>

@@ -21,6 +21,17 @@ export const Hero: React.FC<HeroProps> = ({
     }
   }, [onCtaClick]);
 
+  const scrollToForm = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const element = document.getElementById('application-form');
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <div 
       className={styles.heroSection} 
@@ -38,13 +49,14 @@ export const Hero: React.FC<HeroProps> = ({
         <p className={styles.subtitle}>
           {subtitle}
         </p>
-        <button 
+        <a 
+          href="#application-form" 
+          onClick={scrollToForm} 
           className={styles.ctaButton}
-          onClick={handleClick}
           aria-label={buttonText}
         >
           {buttonText}
-        </button>
+        </a>
       </div>
     </div>
   );

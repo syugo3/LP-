@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './JobExamples.module.css';
 import avatar1 from '../../assets/images/avatar1.png';
 import avatar2 from '../../assets/images/avatar2.png';
@@ -6,6 +6,28 @@ import avatar3 from '../../assets/images/avatar3.png';
 import avatar4 from '../../assets/images/avatar4.png';
 
 export const JobExamples: React.FC = () => {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add(styles.visible);
+            }, index * 150);
+          }
+        });
+      },
+      {
+        threshold: 0.2
+      }
+    );
+
+    const cards = document.querySelectorAll(`.${styles.jobCard}`);
+    cards.forEach((card) => observer.observe(card));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className={styles.jobExamples}>
       <div className={styles.container}>

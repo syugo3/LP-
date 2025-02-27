@@ -35,6 +35,19 @@
   padding: 30px;  /* 内側の余白を追加 */
   min-height: 520px;  /* カードの最小の高さを設定 */
   justify-content: space-between;  /* コンテンツを均等に配置 */
+  transition: all 0.3s ease;  /* アニメーションを追加 */
+  opacity: 0;  /* 初期状態は非表示 */
+  transform: translateY(20px);  /* 少し下から出現 */
+}
+
+.content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.content:hover {
+  transform: translateY(-5px);  /* ホバー時の浮き上がり効果 */
+  box-shadow: 0 8px 25px rgba(0, 102, 204, 0.15);
 }
 
 .content h3 {
@@ -43,21 +56,24 @@
   text-align: center;
 }
 
-.content ul {
-  width: 100%;
-  margin: 20px 0;
-}
-
 .content li {
   display: flex;
-  align-items: center;
+  align-items: flex-start;  /* 上揃えに変更 */
   margin-bottom: 15px;
   padding-left: 25px;
   position: relative;
-  white-space: nowrap;  /* テキストを1行に */
-  overflow: hidden;
-  text-overflow: ellipsis;  /* 長いテキストは省略 */
+  white-space: normal;  /* 改行を許可 */
+  overflow: visible;    /* オーバーフローを表示 */
+  text-overflow: clip;  /* 省略記号を削除 */
   width: 100%;
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #444;
+  transition: transform 0.3s ease;  /* ホバーエフェクト用 */
+}
+
+.content li:hover {
+  transform: translateX(5px);  /* ホバー時に少し右に移動 */
 }
 
 /* チェックマークを疑似要素で作成 */
@@ -67,6 +83,18 @@
   left: 0;
   color: #0066cc;
   font-weight: bold;
+  transition: transform 0.3s ease;  /* チェックマークのアニメーション */
+}
+
+.content li:hover::before {
+  transform: scale(1.2);  /* ホバー時にチェックマークを大きく */
+}
+
+.content ul {
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+  list-style: none;
 }
 
 .skillChart,
@@ -83,6 +111,21 @@
   display: block;
 }
 
+.skillImage {
+  width: 100%;
+  max-width: 280px;  /* 画像サイズを大きく */
+  height: auto;
+  margin: 20px auto;
+  display: block;
+  mix-blend-mode: multiply;  /* 白背景を透過 */
+  border-radius: 8px;
+  transition: transform 0.3s ease;  /* 画像のアニメーション */
+}
+
+.content:hover .skillImage {
+  transform: scale(1.05);  /* ホバー時の画像拡大 */
+}
+
 .button {
   display: inline-block;
   padding: 15px 40px;
@@ -91,16 +134,36 @@
   text-decoration: none;
   color: white;
   border-radius: 8px;
-  background: linear-gradient(45deg, #f90404, #ffc107);  /* グラデーションを更新 */
-  transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 4px 15px rgba(249, 4, 4, 0.3);  /* シャドウカラーを更新 */
+  background: linear-gradient(to right, #0066CC, #00CC99);
+  transition: all 0.3s ease;
   border: none;
   cursor: pointer;
+  position: relative;  /* リップルエフェクトのために追加 */
+  overflow: hidden;    /* リップルエフェクトのために追加 */
 }
 
 .button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(249, 4, 4, 0.4);  /* ホバー時のシャドウカラーを更新 */
+  box-shadow: 0 6px 20px rgba(0, 102, 204, 0.2);
+}
+
+/* リップルエフェクトの追加 */
+.button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.button:active::after {
+  width: 300px;
+  height: 300px;
 }
 
 /* レスポンシブデザイン */
@@ -113,62 +176,55 @@
 .concernsSection {
   width: 100%;
   display: flex;
-  justify-content: center;  /* 水平方向の中央揃え */
-  align-items: center;      /* 垂直方向の中央揃え */
+  justify-content: center;
+  align-items: center;
   padding: 40px 0;
+  background: linear-gradient(to right, rgba(0, 102, 204, 0.05), rgba(0, 204, 153, 0.05));
 }
 
 .concernsContainer {
   max-width: 1200px;
   width: 100%;
-  margin: 0 auto;          /* 左右のマージンを自動で調整 */
+  margin: 0 auto;
   padding: 0 20px;
 }
 
 .concernsContent {
   display: flex;
-  justify-content: center;  /* 内容も中央揃え */
+  justify-content: center;
   align-items: center;
-  gap: 40px;               /* 画像とテキストの間隔 */
+  gap: 40px;
+  animation: fadeIn 0.8s ease-out;
 }
 
 .concernsImage {
-  max-width: 200px;  /* 300pxから200pxに縮小 */
+  max-width: 200px;
   height: auto;
-  width: 100%;      /* レスポンシブ対応を維持 */
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.concernsImage:hover {
+  transform: translateY(-5px);
 }
 
 .concernsText {
-  flex: 1;                 /* テキスト部分の幅を調整 */
-  max-width: 600px;        /* テキストの最大幅を設定 */
+  flex: 1;
+  max-width: 600px;
 }
 
 .concernsText h2 {
   font-size: 2rem;
   margin-bottom: 20px;
   color: #333;
+  line-height: 1.4;
 }
 
 .highlight {
-  background: linear-gradient(45deg, #f90404, #ffc107);  /* 既存のグラデーション */
+  background-color: #f90404;
   color: white;
   padding: 2px 8px;
   border-radius: 4px;
-  margin: 0 2px;
-  display: inline-block;  /* 追加 */
-  animation: wave 2s ease-in-out infinite;  /* 追加 */
-}
-
-@keyframes wave {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  25% {
-    transform: translateY(-5px);
-  }
-  75% {
-    transform: translateY(5px);
-  }
 }
 
 .concernsText ul {
@@ -181,6 +237,7 @@
   margin-bottom: 15px;
   padding-left: 30px;
   position: relative;
+  line-height: 1.6;
 }
 
 .concernsText li:before {
@@ -190,6 +247,17 @@
   color: #0066cc;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 768px) {
   .concernsContent {
     flex-direction: column;
@@ -197,19 +265,95 @@
   }
 
   .concernsImage {
-    width: 200px;
+    width: 180px;
+    margin-bottom: 20px;
+  }
+
+  .concernsText h2 {
+    font-size: 1.8rem;
   }
 
   .concernsText li {
+    font-size: 1.1rem;
     text-align: left;
   }
 }
-.skillImage {
-  width: 100%;
-  max-width: 280px;  /* 画像サイズを大きく */
-  height: auto;
-  margin: 20px auto;
-  display: block;
-  mix-blend-mode: multiply;  /* 白背景を透過 */
-  border-radius: 8px;
+
+.benefitCard {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  opacity: 0;  /* 初期状態は非表示 */
+  transform: translateY(20px);  /* 少し下から出現 */
+}
+
+.benefitCard.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.benefitCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 102, 204, 0.15);
+}
+
+.benefitIcon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.benefitCard:hover .benefitIcon {
+  transform: scale(1.1);
+}
+
+.benefitTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.benefitText {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #666;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 1024px) {
+  .benefitsGrid {
+    grid-template-columns: repeat(2, 1fr);  /* タブレットでは2列に */
+    gap: 30px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .benefitsGrid {
+    grid-template-columns: 1fr;  /* モバイルでは1列に */
+    gap: 25px;
+    padding: 10px;
+  }
+
+  .benefitCard {
+    padding: 25px;
+  }
+
+  .benefitTitle {
+    font-size: 1.2rem;
+  }
+
+  .benefitText {
+    font-size: 0.95rem;
+  }
+
+  .benefitIcon {
+    width: 50px;
+    height: 50px;
+  }
 }

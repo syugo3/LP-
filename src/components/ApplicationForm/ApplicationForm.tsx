@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './ApplicationForm.module.css';
 
 export const ApplicationForm: React.FC = () => {
@@ -7,6 +7,28 @@ export const ApplicationForm: React.FC = () => {
     email: '',
     message: ''
   });
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(styles.visible);
+          }
+        });
+      },
+      {
+        threshold: 0.2
+      }
+    );
+
+    const formContainer = document.querySelector(`.${styles.formContainer}`);
+    if (formContainer) {
+      observer.observe(formContainer);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,7 +45,7 @@ export const ApplicationForm: React.FC = () => {
   };
 
   return (
-    <section className={styles.applicationForm}>
+    <section id="application-form" className={styles.applicationForm}>
       <div className={styles.container}>
         <h2 className={styles.title}>応募</h2>
         <form onSubmit={handleSubmit} className={styles.form}>

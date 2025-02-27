@@ -1,0 +1,118 @@
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.loginCard {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 360px;
+}
+
+.title {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 25px;
+}
+
+.socialButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.socialButton img {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.divider {
+  text-align: center;
+  margin: 16px 0;
+  position: relative;
+  font-size: 14px;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 45%;
+  height: 1px;
+  background: #ddd;
+}
+
+.divider::before { left: 0; }
+.divider::after { right: 0; }
+
+.formGroup {
+  margin-bottom: 16px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.formGroup input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.forgotPassword {
+  display: block;
+  text-align: center;
+  color: #0066CC;
+  text-decoration: none;
+  margin: 16px 0;
+  font-size: 13px;
+}
+
+.loginButton {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(to right, #0066CC, #00CC99);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+.loginButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 102, 204, 0.4);
+}
+
+.register {
+  text-align: center;
+  font-size: 13px;
+}
+
+.registerLink {
+  color: #0066CC;
+  text-decoration: none;
+  margin-left: 4px;
+} 

@@ -47,16 +47,18 @@ export const Hero: React.FC<HeroProps> = ({
           ))}
         </h1>
         <p className={styles.subtitle}>
-          {subtitle}
+          私たちと一緒に、『<span className={styles.highlight}>価値創出</span>』を生み出しませんか？
         </p>
-        <a 
-          href="#application-form" 
-          onClick={scrollToForm} 
-          className={styles.ctaButton}
-          aria-label={buttonText}
-        >
-          {buttonText}
-        </a>
+        <div className={styles.buttonWrapper}>
+          <a 
+            href="#application-form" 
+            onClick={scrollToForm} 
+            className={styles.ctaButton}
+            aria-label={buttonText}
+          >
+            {buttonText}
+          </a>
+        </div>
       </div>
     </div>
   );

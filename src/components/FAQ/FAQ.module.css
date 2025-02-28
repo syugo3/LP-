@@ -10,13 +10,14 @@
 
 .title {
   text-align: center;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   margin-bottom: 60px;
-  color: #333;
+  color: #1a1a1a;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeIn 0.8s ease forwards;
   position: relative;
+  font-weight: 700;
 }
 
 .title::after {
@@ -33,14 +34,14 @@
 .faqList {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
   max-width: 800px;
   margin: 0 auto;
 }
 
 .faqItem {
   background: white;
-  border-radius: 12px;
+  border-radius: 16px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   overflow: hidden;
   transition: all 0.3s ease;
@@ -60,15 +61,28 @@
 }
 
 .question {
-  padding: 24px;
+  padding: 28px 45px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
   font-weight: 600;
-  color: #333;
+  color: #1a1a1a;
   transition: all 0.3s ease;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+  position: relative;
+}
+
+.question::before {
+  content: 'Q';
+  position: absolute;
+  left: 20px;
+  color: #333333;
+  font-size: 1.4rem;
+  font-weight: 700;
+  opacity: 1;
 }
 
 .question:hover {
@@ -81,21 +95,64 @@
   max-height: 0;
   overflow: hidden;
   transition: all 0.4s ease;
-  color: #666;
-  line-height: 1.8;
-  font-size: 1rem;
-  background-color: rgba(0, 102, 204, 0.02);
+  color: #444;
+  line-height: 2;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  background: linear-gradient(to right, #f8f9fa, #ffffff);
+  position: relative;
 }
 
 .answer.open {
-  padding: 24px;
+  padding: 32px 45px 32px 65px;
   max-height: 500px;
+  border-top: 1px solid rgba(0, 102, 204, 0.08);
+  background: #f8f9fa;
+}
+
+.answer.open::before {
+  content: 'A';
+  position: absolute;
+  left: 20px;
+  top: 28px;
+  color: #FF4444;
+  font-size: 1.4rem;
+  font-weight: 700;
+  opacity: 1;
+}
+
+.answer p {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  letter-spacing: 0.03em;
+}
+
+.answer strong {
+  color: #0066CC;
+  font-weight: 600;
+}
+
+.answer ul {
+  margin: 15px 0;
+  padding-left: 20px;
+}
+
+.answer li {
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+.answer p + p {
+  margin-top: 15px;
 }
 
 .icon {
   transition: transform 0.4s ease;
   color: #0066CC;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  margin-left: 20px;
 }
 
 .open .icon {

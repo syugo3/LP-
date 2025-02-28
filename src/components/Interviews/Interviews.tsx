@@ -41,7 +41,16 @@ const Interviews: React.FC = () => {
             </h3>
             <div className={styles.profile}>
               <img src={ryoryotaroImage} alt="ryoryotaro" className={styles.avatar} />
-              <span className={styles.name}>ryoryotaro さん</span>
+              <div className={styles.profileInfo}>
+                <span className={styles.name}>ryoryotaro さん</span>
+                <div className={styles.profileDetails}>
+                  <span>28歳</span>
+                  <span className={styles.separator}>|</span>
+                  <span>男性</span>
+                  <span className={styles.separator}>|</span>
+                  <span>前職：SREエンジニア</span>
+                </div>
+              </div>
             </div>
             <p className={styles.text}>
               前職で<span className={styles.highlight}>SREとしてのキャリアパス</span>を歩んでいる中で、今後の自身のキャリアについて迷いを持っていました。このまま技術を極めてゆくのか、それともピープルマネジメントの道に進むのか。収入面でも漠然とした不安があり、そんな時にReAliceのキャリア相談を知り、軽い気持ちで面談に臨みました。
@@ -72,7 +81,16 @@ const Interviews: React.FC = () => {
             </h3>
             <div className={styles.profile}>
               <img src={marieImage} alt="marie" className={styles.avatar} />
-              <span className={styles.name}>marie さん</span>
+              <div className={styles.profileInfo}>
+                <span className={styles.name}>marie さん</span>
+                <div className={styles.profileDetails}>
+                  <span>32歳</span>
+                  <span className={styles.separator}>|</span>
+                  <span>女性</span>
+                  <span className={styles.separator}>|</span>
+                  <span>前職：フロントエンドエンジニア</span>
+                </div>
+              </div>
             </div>
             <p className={styles.text}>
               次のキャリアを意識し始めた頃、今回転職することになった企業は全く検討すらしていませんでした。ReAliceから紹介されて臨んだ<span className={styles.highlight}>カジュアル面談</span>で「ここなら、自分が活躍する姿がイメージできるな」と直感で感じて以降、段々と志望度が上がり、最終的に転職することを決めました。

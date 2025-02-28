@@ -167,9 +167,114 @@
 }
 
 /* レスポンシブデザイン */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .container {
-    grid-template-columns: 1fr; /* モバイルでは1カラムに */
+    max-width: 90%;
+  }
+
+  .benefitsGrid {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .benefitsSection {
+    padding: 80px 20px;
+  }
+
+  .title {
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+  }
+
+  .benefitsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .benefitCard {
+    padding: 25px;
+  }
+
+  .benefitIcon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+  }
+
+  .benefitTitle {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+
+  .benefitDescription {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .benefitsSection {
+    padding: 60px 15px;
+  }
+
+  .title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .benefitsGrid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .benefitCard {
+    padding: 20px;
+  }
+
+  .benefitIcon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .benefitsSection {
+    padding: 40px 10px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .benefitCard {
+    padding: 15px;
+  }
+
+  .benefitTitle {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  .benefitDescription {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* アニメーションの調整 */
+  .benefitCard {
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 }
 

@@ -295,4 +295,120 @@
     padding-left: 25px;
     line-height: 1.7;
   }
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 90%;
+  }
+
+  .stepsGrid {
+    gap: 30px;
+  }
+
+  .stepCard {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .stepsSection {
+    padding: 80px 20px;
+  }
+
+  .title {
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+  }
+
+  .stepsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .stepNumber {
+    font-size: 1.8rem;
+  }
+
+  .stepTitle {
+    font-size: 1.4rem;
+  }
+
+  .stepDescription {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .stepsSection {
+    padding: 60px 15px;
+  }
+
+  .title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .stepsGrid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .stepCard {
+    padding: 20px;
+  }
+
+  .stepNumber {
+    font-size: 1.6rem;
+  }
+
+  .stepTitle {
+    font-size: 1.3rem;
+    margin: 12px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .stepsSection {
+    padding: 40px 10px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .stepCard {
+    padding: 15px;
+  }
+
+  .stepNumber {
+    font-size: 1.4rem;
+  }
+
+  .stepTitle {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+
+  .stepDescription {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* アニメーションの調整 */
+  .stepCard {
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 } 

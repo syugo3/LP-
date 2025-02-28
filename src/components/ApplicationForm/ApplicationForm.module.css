@@ -118,37 +118,98 @@
   height: 300px;
 }
 
-/* レスポンシブ対応 */
-@media (max-width: 1024px) {
-  .formContainer {
-    padding: 30px;
+/* レスポンシブデザイン */
+@media (max-width: 1200px) {
+  .container {
     max-width: 90%;
   }
 
-  .formGroup {
-    margin-bottom: 20px;
+  .formContainer {
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .applicationSection {
+    padding: 80px 20px;
+  }
+
+  .title {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+  }
+
+  .formContainer {
+    padding: 40px;
+  }
+
+  .formGrid {
+    gap: 25px;
+  }
+
+  .label {
+    font-size: 1rem;
+  }
+
+  .input,
+  .textarea,
+  .select {
+    padding: 12px;
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 768px) {
-  .formContainer {
-    padding: 20px;
-    max-width: 100%;
-    margin: 10px;
+  .applicationSection {
+    padding: 60px 15px;
   }
 
-  .formTitle {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
+  .title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .formContainer {
+    padding: 30px;
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .submitButton {
+    padding: 14px 40px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .applicationSection {
+    padding: 40px 10px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+
+  .formContainer {
+    padding: 20px 15px;
+  }
+
+  .formGroup {
+    margin-bottom: 15px;
   }
 
   .label {
-    font-size: 0.9rem;
-    margin-bottom: 8px;
+    font-size: 0.95rem;
+    margin-bottom: 5px;
   }
 
   .input,
-  .textarea {
+  .textarea,
+  .select {
     padding: 10px;
     font-size: 0.95rem;
   }
@@ -158,12 +219,14 @@
   }
 
   .submitButton {
-    padding: 12px 20px;
-    font-size: 0.95rem;
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
   }
 
-  .error {
-    font-size: 0.8rem;
+  .errorMessage {
+    font-size: 0.85rem;
+    margin-top: 4px;
   }
 }
 

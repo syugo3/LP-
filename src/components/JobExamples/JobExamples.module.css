@@ -350,4 +350,93 @@
   .jobCard {
     padding: 20px;
   }
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 90%;
+  }
+
+  .jobGrid {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .jobExamplesSection {
+    padding: 80px 20px;
+  }
+
+  .title {
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+  }
+
+  .jobGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .jobCard {
+    padding: 25px;
+  }
+
+  .jobTitle {
+    font-size: 1.4rem;
+  }
+
+  .jobDescription {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .jobExamplesSection {
+    padding: 60px 15px;
+  }
+
+  .title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .jobGrid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .jobCard {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .jobExamplesSection {
+    padding: 40px 10px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .jobCard {
+    padding: 15px;
+  }
+
+  .jobTitle {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  .jobDescription {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .jobDetails {
+    font-size: 0.9rem;
+  }
 } 

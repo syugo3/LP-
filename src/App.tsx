@@ -4,7 +4,6 @@ import Header from './components/Header/Header';
 import { Hero } from './components/Hero/Hero';
 import { Benefits } from './components/Benefits/Benefits';
 import { Steps } from './components/Steps/Steps';
-// import { Companies } from './components/Companies/Companies';  // 削除
 import { JobExamples } from './components/JobExamples/JobExamples';
 import { ApplicationForm } from './components/ApplicationForm/ApplicationForm';
 import Interviews from './components/Interviews/Interviews';
@@ -13,15 +12,16 @@ import Login from './components/Login/Login';
 import nfLogo from './assets/images/nf-logo.png';  // imagesフォルダ内にある場合
 // または
 // import nfLogo from './assets/nf-logo.png';  // assetsフォルダ直下にある場合
+import { NewsBlog } from './components/NewsBlog/NewsBlog';
 
 const Home = () => (
   <div style={{ paddingTop: '64px' }}>
     <Hero />
     <Benefits />
     <Steps />
-    {/* <Companies /> */}  {/* 削除 */}
     <JobExamples />
     <Interviews />
+    <NewsBlog />
     <FAQ />
     <ApplicationForm />
   </div>

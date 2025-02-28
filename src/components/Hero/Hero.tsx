@@ -11,7 +11,7 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({
   onCtaClick,
-  title = "未来を創る\nエンジニアを募集中",
+  title = "未来を創る\nエンジニアを採用中",
   subtitle = "私たちと一緒に、『価値創出』を生み出しませんか？",
   buttonText = "応募する"
 }) => {

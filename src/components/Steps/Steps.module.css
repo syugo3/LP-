@@ -46,10 +46,16 @@
   text-align: center;
   position: relative;
   opacity: 0;
-  padding: 20px;
+  padding: 30px;
   background: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 102, 204, 0.08);
+  transition: all 0.3s ease;
+}
+
+.stepItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 102, 204, 0.12);
 }
 
 /* ステップ間の矢印 */
@@ -66,8 +72,11 @@
 }
 
 .stepNumber {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
+  margin: -45px auto 20px;
+  position: relative;
+  z-index: 1;
   border-radius: 50%;
   background: linear-gradient(to right, #0066CC, #00CC99);
   color: white;
@@ -75,7 +84,6 @@
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  margin-bottom: 15px;
   font-size: 1.2rem;
   line-height: 1;
 }
@@ -157,4 +165,134 @@
 /* Intersection Observer用のクラス */
 .stepItem.visible {
   animation-play-state: running;
+}
+
+.detailsSection {
+  margin-top: 100px;
+  background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+  padding: 50px 0;
+  border-radius: 30px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.detailsSection.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.detailsTitle {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 50px;
+  color: #333;
+  position: relative;
+}
+
+.detailsTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(to right, #0066CC, #00CC99);
+}
+
+.detailsList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.detailsItem {
+  background: white;
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 102, 204, 0.08);
+  transition: all 0.5s ease;
+}
+
+.detailsItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 102, 204, 0.12);
+  border-color: rgba(0, 102, 204, 0.15);
+}
+
+.detailsItemTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #0066CC;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f7ff;
+  position: relative;
+}
+
+.detailsItemList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.detailsItemList li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 18px;
+  line-height: 1.8;
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.detailsItemList li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #00CC99;
+  font-weight: bold;
+  font-size: 1.3rem;
+  top: -2px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .detailsList {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 0 15px;
+  }
+
+  .detailsSection {
+    margin-top: 60px;
+  }
+
+  .detailsTitle {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+  }
+
+  .detailsItem {
+    padding: 25px;
+  }
+
+  .detailsItemTitle {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  .detailsItemList li {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    padding-left: 25px;
+    line-height: 1.7;
+  }
 } 

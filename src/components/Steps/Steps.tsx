@@ -5,6 +5,45 @@ import step2 from '../../assets/images/step2.png';
 import step3 from '../../assets/images/step3.png';
 import step4 from '../../assets/images/step4.png';
 
+const stepDetails = [
+  {
+    title: 'STEP 1: GitHub連携で簡単登録',
+    details: [
+      'GitHubアカウントでワンクリック登録',
+      'コミット履歴やリポジトリ情報を自動解析',
+      'プライベートリポジトリは非公開設定可能',
+      '登録完了後すぐにスキル偏差値が表示されます'
+    ]
+  },
+  {
+    title: 'STEP 2: プロフィール充実で魅力アップ',
+    details: [
+      '経験したプロジェクトの詳細を記入',
+      '得意な技術スタックをアピール',
+      'ポートフォリオやブログのリンクを追加',
+      '希望条件や転職時期を設定可能'
+    ]
+  },
+  {
+    title: 'STEP 3: 企業からのオファー',
+    details: [
+      'スキルマッチした企業からオファーが届く',
+      '気になる企業とのマッチング率を確認',
+      '非公開での求職活動も可能',
+      'オファー内容の詳細を確認できます'
+    ]
+  },
+  {
+    title: 'STEP 4: 選考～内定',
+    details: [
+      'オンラインでの面談調整が可能',
+      'キャリアアドバイザーによる面接対策',
+      '条件交渉もサポート',
+      '内定後のキャリア相談も継続的に実施'
+    ]
+  }
+];
+
 export const Steps: React.FC = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -22,8 +61,8 @@ export const Steps: React.FC = () => {
       }
     );
 
-    const steps = document.querySelectorAll(`.${styles.stepItem}`);
-    steps.forEach((step) => observer.observe(step));
+    const elements = document.querySelectorAll(`.${styles.stepItem}, .${styles.detailsSection}`);
+    elements.forEach((element) => observer.observe(element));
 
     return () => observer.disconnect();
   }, []);
@@ -62,7 +101,7 @@ export const Steps: React.FC = () => {
             <div className={styles.stepIcon}>
               <img src={step3} alt="チャットアイコン" />
             </div>
-            <h3>企業からオファーが届く</h3>
+            <h3>オファーが届く</h3>
             <p>スキル偏差値が高いエンジニアにオファーが届く</p>
           </div>
 
@@ -72,7 +111,23 @@ export const Steps: React.FC = () => {
               <img src={step4} alt="握手" />
             </div>
             <h3>内定が出る</h3>
-            <p>人気のテック企業から内定</p>
+            <p>ReAliceから内定が出る</p>
+          </div>
+        </div>
+
+        <div className={styles.detailsSection}>
+          <h3 className={styles.detailsTitle}>各ステップの詳細</h3>
+          <div className={styles.detailsList}>
+            {stepDetails.map((step, index) => (
+              <div key={index} className={styles.detailsItem}>
+                <h4 className={styles.detailsItemTitle}>{step.title}</h4>
+                <ul className={styles.detailsItemList}>
+                  {step.details.map((detail, detailIndex) => (
+                    <li key={detailIndex}>{detail}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </div>

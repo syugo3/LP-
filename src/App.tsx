@@ -4,7 +4,7 @@ import Header from './components/Header/Header';
 import { Hero } from './components/Hero/Hero';
 import { Benefits } from './components/Benefits/Benefits';
 import { Steps } from './components/Steps/Steps';
-import { Companies } from './components/Companies/Companies';
+// import { Companies } from './components/Companies/Companies';  // 削除
 import { JobExamples } from './components/JobExamples/JobExamples';
 import { ApplicationForm } from './components/ApplicationForm/ApplicationForm';
 import Interviews from './components/Interviews/Interviews';
@@ -19,7 +19,7 @@ const Home = () => (
     <Hero />
     <Benefits />
     <Steps />
-    <Companies />
+    {/* <Companies /> */}  {/* 削除 */}
     <JobExamples />
     <Interviews />
     <FAQ />

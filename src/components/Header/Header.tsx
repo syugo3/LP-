@@ -29,7 +29,6 @@ const Header: React.FC = () => {
           </Link>
         </div>
         <div className={styles.navLinks}>
-          <Link to="/search" className={styles.navLink}>求人・企業検索</Link>
           <Link to="/media" className={styles.navLink}>メディア</Link>
           <Link to="/event" className={styles.navLink}>イベント</Link>
           <Link to="/recruiter" className={styles.navLink}>採用担当者の方はこちら</Link>

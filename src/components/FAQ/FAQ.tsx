@@ -171,7 +171,9 @@ export const FAQ: React.FC = () => {
   return (
     <section className={styles.faqSection}>
       <div className={styles.container}>
-        <h2 className={styles.title}>よくある質問</h2>
+        <h2 id="faqTitle" className={styles.title}>
+          よくある質問
+        </h2>
         <div className={styles.faqList}>
           {faqData.map((faq, index) => (
             <div 

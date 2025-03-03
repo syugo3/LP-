@@ -40,7 +40,9 @@ export const Benefits: React.FC = () => {
               className={styles.concernsImage} 
             />
             <div className={styles.concernsText}>
-              <h2>こんなことに<span className={styles.highlight}>悩んで</span>いませんか？</h2>
+              <h2 id="troublesTitle">
+                こんなことに<span className={styles.highlight}>悩んで</span>いませんか？
+              </h2>
               <ul>
                 <li><span style={{ whiteSpace: 'nowrap' }}> 応募したいけど、自分の技術力を評価してくれる会社が分からない。</span></li>
                 <li>自分の希望年収に見合う会社を見つけたい。</li>

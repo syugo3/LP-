@@ -41,7 +41,9 @@ export const NewsBlog: React.FC = () => {
   return (
     <section className={styles.newsBlogSection}>
       <div className={styles.container}>
-        <h2 className={styles.title}>News & Blog</h2>
+        <h2 id="newsBlogTitle" className={styles.title}>
+          News & Blog
+        </h2>
         <p className={styles.subtitle}>最新のニュースと技術ブログをご紹介</p>
         
         <div className={styles.newsGrid}>

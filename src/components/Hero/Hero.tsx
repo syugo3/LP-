@@ -33,12 +33,9 @@ export const Hero: React.FC<HeroProps> = ({
   };
 
   return (
-    <div 
-      className={styles.heroSection} 
-      style={{ backgroundImage: `url(${backgroundImage})` }}
-    >
+    <section id="hero" className={styles.heroSection} style={{ backgroundImage: `url(${backgroundImage})` }}>
       <div className={styles.heroContent}>
-        <h1 className={styles.title}>
+        <h1 id="heroTitle" className={styles.title}>
           {title.split('\n').map((line, i) => (
             <React.Fragment key={i}>
               {line}
@@ -60,6 +57,6 @@ export const Hero: React.FC<HeroProps> = ({
           </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 }; 

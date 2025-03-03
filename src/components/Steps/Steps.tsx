@@ -70,7 +70,9 @@ export const Steps: React.FC = () => {
   return (
     <section className={styles.steps}>
       <div className={styles.container}>
-        <h2 className={styles.title}>ご利用の流れ</h2>
+        <h2 id="benefitsTitle" className={styles.title}>
+          ご利用の流れ
+        </h2>
         <p className={styles.description}>
           応募意欲がなくても年収予測やスキル偏差値をご利用いただくことも可能です。
           <br />
@@ -116,7 +118,7 @@ export const Steps: React.FC = () => {
         </div>
 
         <div className={styles.detailsSection}>
-          <h3 className={styles.detailsTitle}>各ステップの詳細</h3>
+          <h2 id="stepsTitle" className={styles.detailsTitle}>各ステップの詳細</h2>
           <div className={styles.detailsList}>
             {stepDetails.map((step, index) => (
               <div key={index} className={styles.detailsItem}>

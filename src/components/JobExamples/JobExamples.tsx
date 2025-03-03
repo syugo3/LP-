@@ -83,9 +83,11 @@ export const JobExamples: React.FC = () => {
   return (
     <section className={styles.jobExamples}>
       <div className={styles.container}>
-        <h2 className={styles.title}>転職事例</h2>
+        <h2 id="jobExamplesTitle" className={styles.title}>
+          応募事例
+        </h2>
         <p className={styles.subtitle}>
-          ReAliceを通じて転職された方々の実績をご紹介します。
+          ReAliceに応募された方々の実績をご紹介します。
           <br />
           スキルに応じた適切な年収アップを実現しています。
         </p>
@@ -112,14 +114,14 @@ export const JobExamples: React.FC = () => {
 
               <div className={styles.salary}>
                 <div className={styles.before}>
-                  <span>転職前</span>
+                  <span>応募前</span>
                   <div className={styles.amount}>年収{example.beforeSalary}</div>
                 </div>
                 <div className={styles.arrow}>
                   <span className={styles.increase}>{example.increase}</span>
                 </div>
                 <div className={styles.after}>
-                  <span>転職後</span>
+                  <span>内定後</span>
                   <div className={styles.amount}>年収{example.afterSalary}</div>
                 </div>
               </div>

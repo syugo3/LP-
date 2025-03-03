@@ -27,9 +27,11 @@ const Interviews: React.FC = () => {
   return (
     <section className={styles.interviews}>
       <div className={styles.container}>
-        <h2 className={styles.title}>社内インタビュー</h2>
+        <h2 id="interviewsTitle" className={styles.title}>
+          社内インタビュー
+        </h2>
         <p className={styles.subtitle}>
-          ReAliceに応募して転職された方の声をご紹介
+          ReAliceに応募された方の声をご紹介
         </p>
 
         <div className={styles.interviewGrid}>

@@ -13,6 +13,7 @@ import nfLogo from './assets/images/nf-logo.png';  // imagesフォルダ内に�
 // または
 // import nfLogo from './assets/nf-logo.png';  // assetsフォルダ直下にある場合
 import { NewsBlog } from './components/NewsBlog/NewsBlog';
+import { Overview } from './components/Overview/Overview';
 
 const Home = () => (
   <div style={{ paddingTop: '64px' }}>
@@ -24,6 +25,7 @@ const Home = () => (
     <NewsBlog />
     <FAQ />
     <ApplicationForm />
+    <Overview />
   </div>
 );
 

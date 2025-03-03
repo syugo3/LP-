@@ -47,7 +47,9 @@ export const ApplicationForm: React.FC = () => {
   return (
     <section id="application-form" className={styles.applicationForm}>
       <div className={styles.container}>
-        <h2 className={styles.title}>応募</h2>
+        <h2 id="applicationFormTitle" className={styles.title}>
+          応募フォーム
+        </h2>
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.formGroup}>
             <label htmlFor="name" className={styles.label}>名前：</label>

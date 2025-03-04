@@ -29,8 +29,8 @@ const Header: React.FC = () => {
           </Link>
         </div>
         <div className={styles.navLinks}>
-          <Link to="/media" className={styles.navLink}>メディア</Link>
-          <Link to="/event" className={styles.navLink}>イベント</Link>
+          <Link to="/media" className={styles.navLink}>ニュース</Link>
+          <Link to="/event" className={styles.navLink}>社内Blog</Link>
           <Link to="/recruiter" className={styles.navLink}>採用担当者の方はこちら</Link>
           <Link to="/login" className={styles.loginButton}>ログイン</Link>
           <a href="#application-form" 

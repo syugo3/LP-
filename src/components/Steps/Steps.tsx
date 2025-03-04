@@ -117,8 +117,8 @@ export const Steps: React.FC = () => {
           </div>
         </div>
 
-        <div className={styles.detailsSection}>
-          <h2 id="stepsTitle" className={styles.detailsTitle}>各ステップの詳細</h2>
+        <div className={styles.detailsSection}> <h2 id="stepsTitle" className={styles.detailsTitle}>各ステップの詳細</h2>
+         
           <div className={styles.detailsList}>
             {stepDetails.map((step, index) => (
               <div key={index} className={styles.detailsItem}>

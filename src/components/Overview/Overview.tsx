@@ -23,7 +23,7 @@ export const Overview: React.FC = () => {
         
         <div className={styles.content}>
           <div className={styles.sections}>
-            <h3>セクション</h3>
+            <h3>項目</h3>
             <ul className={styles.sectionList}>
               <li onClick={() => scrollToSection('heroTitle')}>トップページ</li>
               <li onClick={() => scrollToSection('troublesTitle')}>こんなことに悩んでいませんか？</li>
@@ -48,9 +48,6 @@ export const Overview: React.FC = () => {
               <li onClick={() => window.location.href = '/contact'}>お問い合わせ</li>
               <li onClick={() => window.location.href = 'https://realice.jp'}>企業情報</li>
             </ul>
-            <div className={styles.logo}>
-              <span className={styles.logoText}>ReAlice</span>
-            </div>
           </div>
         </div>
       </div>

@@ -24,6 +24,10 @@ const Interviews: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
+  const handleApply = () => {
+    // Implementation of handleApply function
+  };
+
   return (
     <section className={styles.interviews}>
       <div className={styles.container}>
@@ -36,11 +40,6 @@ const Interviews: React.FC = () => {
 
         <div className={styles.interviewGrid}>
           <div className={styles.interviewCard}>
-            <h3 className={styles.cardTitle}>
-              ReAliceに応募し新天地にて
-              Technical Account Manager
-              としてご活躍中
-            </h3>
             <div className={styles.profile}>
               <img src={ryoryotaroImage} alt="ryoryotaro" className={styles.avatar} />
               <div className={styles.profileInfo}>
@@ -63,24 +62,15 @@ const Interviews: React.FC = () => {
                 面談時「現場に立つことがやりがい」と仰っていた点が強く印象に残っています。詳しくお話を伺う中で「エンドユーザーの顔が見えること」「人々に良い影響を与えること」がryoryotaroさんにとっての仕事のやりがい、キャリアの軸にあると感じました。「過去」の体験を整理して「未来」のキャリアを前向きに考える、そのサポートができていたら幸いです。
               </p>
             </div>
-            <a 
-              href="/login" 
+            <button 
+              onClick={handleApply} 
               className={styles.applyButton}
-              onClick={(e) => {
-                e.preventDefault();
-                window.location.href = '/login';
-              }}
             >
-              新規登録して面談に申し込む
-            </a>
+              応募する
+            </button>
           </div>
 
           <div className={styles.interviewCard}>
-            <h3 className={styles.cardTitle}>
-              転職の軸が固まっていない状態から
-              自身でも気づかなかった
-              魅力的な職場に転職
-            </h3>
             <div className={styles.profile}>
               <img src={marieImage} alt="marie" className={styles.avatar} />
               <div className={styles.profileInfo}>
@@ -103,16 +93,12 @@ const Interviews: React.FC = () => {
                 初めて面談させていただいた際のmarieさんはやりたい事や希望の条件をたくさんお持ちでした。転職後、後悔せずに働いていただくために、どの価値観を重視して仕事選びをしていただくのがよいか、一緒に考えさせていただきました。選考中「この会社はすごく自分に合いそう」と嬉しそうに語られていたのが印象的で、そうした会社をご紹介できて本当によかったと思っています。
               </p>
             </div>
-            <a 
-              href="/login" 
+            <button 
+              onClick={handleApply} 
               className={styles.applyButton}
-              onClick={(e) => {
-                e.preventDefault();
-                window.location.href = '/login';
-              }}
             >
-              新規登録して面談に申し込む
-            </a>
+              応募する
+            </button>
           </div>
         </div>
       </div>

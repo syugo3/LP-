@@ -115,8 +115,12 @@
     padding: 12px 15px;
   }
 
+  .brandName {
+    font-size: 1.2rem;
+  }
+
   .logo {
-    font-size: 1.6rem;
+    height: 30px;
   }
 
   /* ハンバーガーメニューの表示 */
@@ -173,26 +177,13 @@
 
   /* モバイルナビゲーション */
   .nav {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 80%;
-    max-width: 300px;
-    height: 100vh;
-    background: white;
+    padding: 60px 20px;
+  }
+
+  .navLinks {
     flex-direction: column;
-    padding: 80px 30px;
-    gap: 20px;
-    transition: right 0.3s ease;
-    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .navOpen {
-    right: 0;
-  }
-
-  .navLink {
-    font-size: 1.1rem;
+    width: 100%;
+    gap: 15px;
   }
 
   .loginButton {

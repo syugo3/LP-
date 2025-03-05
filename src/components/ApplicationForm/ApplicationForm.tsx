@@ -45,7 +45,7 @@ export const ApplicationForm: React.FC = () => {
   };
 
   return (
-    <section id="application-form" className={styles.applicationForm}>
+    <section id="applicationForm" className={styles.formSection}>
       <div className={styles.container}>
         <h2 id="applicationFormTitle" className={styles.title}>
           応募フォーム

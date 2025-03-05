@@ -129,6 +129,26 @@
     bottom: -30px;
     left: 50%;
   }
+
+  .stepItem {
+    padding: 20px 15px;
+  }
+
+  .stepNumber {
+    width: 70px;
+    height: 70px;
+    margin: -35px auto 15px;
+  }
+
+  .stepIcon {
+    width: 120px;
+    height: 120px;
+  }
+
+  .stepIcon img {
+    width: 80px;
+    height: 80px;
+  }
 }
 
 @keyframes slideIn {

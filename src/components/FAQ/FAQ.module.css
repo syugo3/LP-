@@ -233,21 +233,19 @@
     margin-bottom: 30px;
   }
 
-  .question {
-    padding: 18px 35px 18px 30px;
-    font-size: 1rem;
-  }
-
-  .question::before {
-    left: 12px;
-    font-size: 1.1rem;
+  .faqItem {
+    border-radius: 12px;
   }
 
   .answer.open {
-    padding: 20px 15px 20px 30px;
+    max-height: none;
   }
 
-  .answer.open::before {
+  .question {
+    padding: 15px 30px 15px 25px;
+  }
+
+  .question::before {
     left: 12px;
     font-size: 1.1rem;
   }

@@ -24,8 +24,15 @@ const Interviews: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
-  const handleApply = () => {
-    // Implementation of handleApply function
+  const handleApplyClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const formElement = document.getElementById('applicationForm');
+    if (formElement) {
+      formElement.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
   };
 
   return (
@@ -63,8 +70,8 @@ const Interviews: React.FC = () => {
               </p>
             </div>
             <button 
-              onClick={handleApply} 
-              className={styles.applyButton}
+              className={styles.applyButton} 
+              onClick={handleApplyClick}
             >
               応募する
             </button>
@@ -94,8 +101,8 @@ const Interviews: React.FC = () => {
               </p>
             </div>
             <button 
-              onClick={handleApply} 
-              className={styles.applyButton}
+              className={styles.applyButton} 
+              onClick={handleApplyClick}
             >
               応募する
             </button>

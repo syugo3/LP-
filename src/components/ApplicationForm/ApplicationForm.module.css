@@ -170,73 +170,71 @@
 }
 
 @media (max-width: 768px) {
-  .applicationSection {
-    padding: 60px 15px;
+  .formSection {
+    padding: 40px 20px;
   }
 
-  .title {
-    font-size: 2rem;
-    margin-bottom: 30px;
-  }
-
-  .formContainer {
-    padding: 30px;
-  }
-
-  .formGrid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .submitButton {
-    padding: 14px 40px;
-    font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .applicationSection {
-    padding: 40px 10px;
+  .container {
+    width: 100%;
+    max-width: 100%;
   }
 
   .title {
     font-size: 1.8rem;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
   }
 
-  .formContainer {
-    padding: 20px 15px;
+  .form {
+    padding: 20px;
   }
 
   .formGroup {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
 
   .label {
-    font-size: 0.95rem;
-    margin-bottom: 5px;
+    font-size: 1rem;
   }
 
   .input,
-  .textarea,
-  .select {
-    padding: 10px;
-    font-size: 0.95rem;
-  }
-
   .textarea {
-    min-height: 120px;
+    padding: 10px;
+    font-size: 1rem;
   }
 
   .submitButton {
     width: 100%;
     padding: 12px;
-    font-size: 1rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .formSection {
+    padding: 30px 15px;
   }
 
-  .errorMessage {
-    font-size: 0.85rem;
-    margin-top: 4px;
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .form {
+    padding: 15px;
+  }
+
+  .label {
+    font-size: 0.9rem;
+  }
+
+  .input,
+  .textarea {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .submitButton {
+    padding: 10px;
+    font-size: 1rem;
   }
 }
 
